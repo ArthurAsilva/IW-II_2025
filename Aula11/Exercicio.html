@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário Simples</title>
+</head>
+<body>
+
+    <form id="formulario">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" oninput="console.log('Nome:', this.value.length)" required>
+        <br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <button type="button" onclick="enviar()">Enviar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function enviar() {
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mensagem = document.getElementById('mensagem');
+
+            if (!nome || !email) {
+                mensagem.textContent = "Por favor, preencha todos os campos antes de enviar.";
+            } else {
+                mensagem.textContent = `Obrigado, ${nome}! Seus dados foram enviados com sucesso.`;
+            }
+        }
+
+        document.getElementById('email').addEventListener('blur', function () {
+            if (!this.value.trim()) {
+                document.getElementById('mensagem').textContent = "Por favor, preencha o e-mail.";
+            }
+        });
+    </script>
+
+</body>
+</html>

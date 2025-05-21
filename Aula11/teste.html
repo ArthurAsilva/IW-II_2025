@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+    <form id="formulario">
+        <label for="nome">Nome Completo:</label>
+        <input type="text" id="nome" name="nome" onkeyup="contarCaracteres()" required>
+        <br><br>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" onblur="verificarEmail()" required>
+        <br><br>
+
+        <button type="button" id="botaoEnviar" onclick="enviarFormulario()">Enviar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script>
+        // Função chamada no evento onkeyup (campo nome)
+        function contarCaracteres() {
+            var nome = document.getElementById('nome').value;
+            console.log("Quantidade de caracteres digitados no nome: " + nome.length);
+        }
+
+        // Função chamada no evento onblur (campo e-mail)
+        function verificarEmail() {
+            var email = document.getElementById('email').value;
+            var mensagem = document.getElementById('mensagem');
+            
+            if (email === "") {
+                mensagem.textContent = "Por favor, preencha o e-mail.";
+                mensagem.style.color = "red";
+            }
+        }
+
+        // Função chamada no evento onclick (botão Enviar)
+        function enviarFormulario() {
+            var nome = document.getElementById('nome').value;
+            var email = document.getElementById('email').value;
+            var mensagem = document.getElementById('mensagem');
+            
+            mensagem.textContent = "Obrigado, " + nome + "! Seus dados foram enviados com sucesso.";
+            mensagem.style.color = "green";
+        }
+    </script>
+</body>
+</html>

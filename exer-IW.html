@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Simples</title>
+</head>
+<body>
+
+    <form id="formulario">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" oninput="contarCaracteres()" required>
+        <span id="contador">0</span> caracteres
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <button type="button" onclick="enviar()">Enviar</button>
+    </form>
+
+    <p id="mensagem"></p>
+
+    <script>
+        function contarCaracteres() {
+            const nome = document.getElementById('nome').value;
+            document.getElementById('contador').textContent = nome.length;
+        }
+
+        function enviar() {
+            const nome = document.getElementById('nome').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const mensagem = document.getElementById('mensagem');
+
+            if (!nome || !email) {
+                mensagem.textContent = "Preencha todos os campos.";
+            } else {
+                mensagem.textContent = `Obrigado, ${nome}!`;
+            }
+        }
+
+        document.getElementById('email').onblur = function () {
+            if (!this.value.trim()) {
+                document.getElementById('mensagem').textContent = "O campo e-mail é obrigatório.";
+            }
+        };
+    </script>
+
+</body>
+</html>
+

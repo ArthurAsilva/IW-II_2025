@@ -6,7 +6,7 @@
     <title>03</title>
 </head>
 <body>
-  <input type="text" id="meuInput" placeholder="Digite algo..." />
+  <input type="text" id="meuInput" placeholder="Digite algo:" />
   <button id="meuBotao">mostrar alerta</button>
 
   <script>
@@ -18,9 +18,9 @@
     botao.addEventListener('click', function () {
       const valorAtual = input.value;
 
-      if (valorAtual !== '' && valorAtual !== ultimoValorExibido) {
+      if (valorAtual !== '' && valorAt !== ulValorExibido) {
         alert(valorAtual);
-        ultimoValorExibido = valorAtual;
+        ulValorExibido = valorAt;
       }
     });
 

@@ -1,0 +1,96 @@
+/* Fundo, container e centralização */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at center, #0d1b2a, #000000 80%);
+  color: #e0e0e0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 900px;
+  width: 90vw;
+  padding: 20px;
+  background: rgba(10, 25, 41, 0.85);
+  border-radius: 15px;
+  box-shadow: 0 0 15px #3b82f6;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Evento */
+.evento {
+  background: rgba(59, 130, 246, 0.2);
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px #3b82f6;
+  color: #dbeafe;
+}
+
+.evento p {
+  margin-bottom: 10px;
+}
+
+.evento button {
+  background: linear-gradient(45deg, #4f46e5, #3b82f6);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 10px #2563eb;
+  transition: background 0.3s ease;
+}
+
+.evento button:hover {
+  background: linear-gradient(45deg, #2563eb, #60a5fa);
+}
+
+/* Formulario */
+.formulario {
+  background: rgba(100, 87, 255, 0.15);
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.formulario h1 {
+  color: #b3a1ff;
+  margin-bottom: 15px;
+}
+
+.formulario input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #2563eb;
+  background-color: #0f172a;
+  color: #e0e0e0;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.formulario input[type="text"]:focus {
+  outline: none;
+  border-color: #60a5fa;
+  box-shadow: 0 0 8px #60a5fa;
+}
+
+.formulario input[type="submit"] {
+  background: linear-gradient(45deg, #4f46e5, #3b82f6);
+  color: white;
+  border: none;
+  padding: 12px 0;
+  width: 100%;
+}
